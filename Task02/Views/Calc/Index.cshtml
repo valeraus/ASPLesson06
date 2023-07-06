@@ -1,0 +1,25 @@
+﻿@model CalcViewModel
+
+<h1>Калькулятор</h1>
+
+<form asp-action="Calculate" method="post">
+    <div class="form-group">
+        <label for="a">Число A</label>
+        <input type="number" id="a" name="a" class="form-control" value="@Model.A" />
+    </div>
+    <div class="form-group">
+        <label for="b">Число B</label>
+        <input type="number" id="b" name="b" class="form-control" value="@Model.B" />
+    </div>
+    <div class="form-group">
+        <button type="submit" name="operation" value="Add" class="btn btn-primary">+</button>
+        <button type="submit" name="operation" value="Subtract" class="btn btn-primary">-</button>
+        <button type="submit" name="operation" value="Multiply" class="btn btn-primary">*</button>
+        <button type="submit" name="operation" value="Divide" class="btn btn-primary">/</button>
+    </div>
+</form>
+
+@if (Model.Result != null)
+{
+    <h2>Результат: @Model.Result</h2>
+}
